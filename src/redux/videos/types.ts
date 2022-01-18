@@ -1,5 +1,3 @@
-const Types = () => {
+const types = () => {};
 
-}
-
-export default Types
+export default types;
