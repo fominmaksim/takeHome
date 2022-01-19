@@ -1,17 +1,19 @@
-// const initialStore = {
-//   videos: [],
-// };
+import { Results } from "../../services/types";
+import { ItunesActions, ItunesActionTypes } from "./types";
 
-// const app = (store = initialStore, action: { type: any; payload: any; }) => {
-//   switch (action.type) {
-//     case MoviesActions.SET_MOVIES:
-//       return { ...store, movies: action.payload };
-//     default:
-//       return store;
-//   }
-// };
+export interface ItunesStore {
+  iTunes?: Results[];
+}
 
-// export default app;
-const reducer = () => {};
+const initialStore: ItunesStore = {};
 
-export default reducer;
+const app = (store = initialStore, action: ItunesActionTypes) => {
+  switch (action.type) {
+    case ItunesActions.SET_ITUNES_CONTENT:
+      return { ...store, iTunes: action.payload };
+    default:
+      return store;
+  }
+};
+
+export default app;

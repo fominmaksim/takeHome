@@ -1,16 +1,18 @@
 import axios from "axios";
-import { VideosResponse } from "./types";
+import { contentResponse } from "./types";
 
-// const moviesApi = axios.create({
-//   baseURL: "https://itunes.apple.com/lookup?amgVideoId=17120",
-// });
+const itunesApi = axios.create({
+  baseURL: "https://itunes.apple.com/",
+});
 
-export const appleMovies = async () => {
+export const searchResponse = async (inputRequest: string) => {
   try {
-    const res = await axios.get<VideosResponse>(
-      "https://itunes.apple.com/lookup?amgVideoId=17120"
-    );
-      return res;
+    const res = await itunesApi.get<contentResponse>(`search`, {
+      params: {
+        term: inputRequest,
+      },
+    });
+    return res.data.results;
   } catch (e) {
     console.warn(e);
     return false;

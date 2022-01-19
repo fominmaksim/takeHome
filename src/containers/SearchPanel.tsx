@@ -1,5 +1,11 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import React, { useState } from "react";
 import styled from "styled-components";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { RootStore } from "../redux/store";
+import { ItunesStore } from "../redux/videos/reducer";
+import { loadItunesContent } from "../redux/videos/actions";
 
 const Label = styled.label`
   display: flex;
@@ -16,17 +22,25 @@ const SearchPanel: React.FunctionComponent = () => {
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     onInputChange(e.target.value);
   };
+  
 
-  const submit = (e: React.SyntheticEvent) => {
-    console.log(input);
+  const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
+    dispatch(loadItunesContent(input));
   };
+
+  const dispatch = useDispatch();
+  const iTunesData = useSelector<RootStore, ItunesStore["iTunes"]>(
+    (store) => store.app.iTunes
+  );
+ 
+  console.log(iTunesData);
   return (
-    <form onSubmit={(e) => submit(e)}>
+    <form onSubmit={(e) => handleSubmit(e)}>
       <Label>
         Search for music and viedo here
         <Input type="text" onChange={handleInputChange} value={input} />
-        <SearchSubmitButton type="submit" />
+        <SearchSubmitButton type="submit" value="search" />
       </Label>
     </form>
   );
