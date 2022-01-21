@@ -1,34 +1,151 @@
-export type VideosResponse = {
+export type contentResponse = {
   resultsCount: number;
-  results: Videos[];
+  results: Results[];
 };
 
-export interface Videos {
-  wrapperType: string;
-  kind: string;
-  trackId: number;
+export type Results = FeatureMovie | Song | TvEpisode | Podcast
+
+export interface FeatureMovie {
   artistName: string;
-  trackName: string;
-  trackCensoredName: string;
-  trackViewUrl: string;
-  previewUrl: string;
   artworkUrl30: string;
   artworkUrl60: string;
   artworkUrl100: string;
-  collectionPrice: number;
-  trackPrice: number;
-  trackRentalPrice: number;
-  collectionHdPrice: number;
-  trackHdPrice: number;
-  trackHdRentalPrice: number;
-  releaseDate: string;
+  collectionArtistId: number;
+  collectionArtistViewUrl: string;
+  collectionCensoredName: string;
   collectionExplicitness: string;
-  trackExplicitness: string;
-  trackTimeMillis: number;
+  collectionHdPrice: number;
+  collectionId: number;
+  collectionName: string;
+  collectionPrice: number;
+  collectionViewUrl: string;
+  contentAdvisoryRating: string;
   country: string;
   currency: string;
-  primaryGenreName: string;
-  contentAdvisoryRating: string;
-  shortDescription: string;
+  hasITunesExtras: boolean;
+  kind: string;
   longDescription: string;
+  previewUrl: string;
+  primaryGenreName: string;
+  releaseDate: string;
+  shortDescription: string;
+  trackCensoredName: string;
+  trackCount: number;
+  trackExplicitness: string;
+  trackHdPrice: number;
+  trackHdRentalPrice: number;
+  trackId: number;
+  trackName: string;
+  trackNumber: number;
+  trackPrice: number;
+  trackRentalPrice: number;
+  trackTimeMillis: number;
+  trackViewUrl: string;
+  wrapperType: string;
+}
+export interface Song {
+  artistId: number;
+  artistName: string;
+  artistViewUrl: string;
+  artworkUrl30: string;
+  artworkUrl60: string;
+  artworkUrl100: string;
+  collectionCensoredName: string;
+  collectionExplicitness: string;
+  collectionId: number;
+  collectionName: string;
+  collectionPrice: number;
+  collectionViewUrl: string;
+  country: string;
+  currency: string;
+  discCount: number;
+  discNumber: number;
+  isStreamable: boolean;
+  kind: string;
+  previewUrl: string;
+  primaryGenreName: string;
+  releaseDate: string;
+  trackCensoredName: string;
+  trackCount: number;
+  trackExplicitness: string;
+  trackId: number;
+  trackName: string;
+  trackNumber: number;
+  trackPrice: number;
+  trackTimeMillis: number;
+  trackViewUrl: string;
+  wrapperType: string;
+}
+
+export interface TvEpisode {
+  artistId: number;
+  artistName: string;
+  artistViewUrl: string;
+  artworkUrl30: string;
+  artworkUrl60: string;
+  artworkUrl100: string;
+  collectionCensoredName: string;
+  collectionExplicitness: string;
+  collectionHdPrice: number;
+  collectionId: number;
+  collectionName: string;
+  collectionPrice: number;
+  collectionViewUrl: string;
+  contentAdvisoryRating: string;
+  country: string;
+  currency: string;
+  discCount: number;
+  discNumber: number;
+  kind: string;
+  longDescription: string;
+  previewUrl: string;
+  primaryGenreName: string;
+  releaseDate: string;
+  shortDescription: string;
+  trackCensoredName: string;
+  trackCount: number;
+  trackExplicitness: string;
+  trackHdPrice: number;
+  trackId: number;
+  trackName: string;
+  trackNumber: number;
+  trackPrice: number;
+  trackTimeMillis: number;
+  trackViewUrl: string;
+  wrapperType: string;
+}
+
+export interface Podcast {
+  artistName: string;
+  artworkUrl30: string;
+  artworkUrl60: string;
+  artworkUrl100: string;
+  artworkUrl600: string;
+  collectionCensoredName: string;
+  collectionExplicitness: string;
+  collectionHdPrice: number;
+  collectionId: number;
+  collectionName: string;
+  collectionPrice: number;
+  collectionViewUrl: string;
+  contentAdvisoryRating: string;
+  country: string;
+  currency: string;
+  feedUrl: string;
+  genreIds: string[];
+  genres: string[];
+  kind: string;
+  primaryGenreName: string;
+  releaseDate: string;
+  trackCensoredName: string;
+  trackCount: number;
+  trackExplicitness: string;
+  trackHdPrice: number;
+  trackHdRentalPrice: number;
+  trackId: number;
+  trackName: string;
+  trackPrice: number;
+  trackRentalPrice: number;
+  trackViewUrl: string;
+  wrapperType: string;
 }
