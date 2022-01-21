@@ -1,6 +1,9 @@
 import styled from "styled-components";
 import SearchPanel from "./containers/SearchPanel";
 import "./reset.css";
+import "./app.css"
+
+
 const Wrapper = styled.section`
   display: flex;
   background-color: black;

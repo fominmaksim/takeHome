@@ -2,7 +2,7 @@ import { createStore, applyMiddleware, combineReducers } from 'redux';
 import logger from 'redux-logger';
 import thunk from 'redux-thunk';
 
-import app from './videos/reducer';
+import app from './iTunes/reducer';
 
 const rootReducer = combineReducers({
   app,
