@@ -22,7 +22,7 @@ const SearchResult: React.FunctionComponent<SearchResultProps> = ({
     <>
       <Title>{label[0].toUpperCase() + label.substring(1)}</Title>
       {data.map((el: Results) => {
-        return <SearchItem key={el.collectionId} content={{ el }} />;
+        return <SearchItem key={el.trackId} content={{ el }} />;
       })}
     </>
   );
