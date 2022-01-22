@@ -1,8 +1,9 @@
-/* eslint-disable array-callback-return */
 import React from "react";
 import styled from "styled-components";
 import { Results } from "../services/types";
-
+import "react-responsive-modal/styles.css";
+import "../modalStyles.css";
+import InfoModal from "../components/Modal";
 const Title = styled.h3`
   color: white;
   margin-bottom: 1rem;
@@ -40,6 +41,7 @@ const Description = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 100%;
 `;
 const SubDescription = styled.div`
   display: flex;
@@ -48,6 +50,20 @@ const SubDescription = styled.div`
     display: block;
   }
 `;
+const Info = styled.div`
+  align-self: center;
+  justify-self: flex-end;
+`;
+
+const LinkExternal = styled.a`
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
 interface SearchResultProps {
   label: string;
   data: Results[];
@@ -56,6 +72,7 @@ const SearchResult: React.FunctionComponent<SearchResultProps> = ({
   label,
   data,
 }) => {
+  
   return (
     <>
       <Title>{label[0].toUpperCase() + label.substring(1)}</Title>
@@ -64,17 +81,30 @@ const SearchResult: React.FunctionComponent<SearchResultProps> = ({
           <Item key={el.artistName}>
             <Cover src={el.artworkUrl60} alt="cover" />
             <Description>
-              <ItemTitle>{el.trackCensoredName}</ItemTitle>
+              <ItemTitle>
+                <LinkExternal href={el.trackViewUrl} target="_blank">
+                  {el.trackCensoredName}
+                </LinkExternal>
+              </ItemTitle>
               <SubDescription>
                 <ItemDescription>
-                  {el.artistName}&nbsp;<Dot>&#8226;</Dot>&nbsp;
+                  <LinkExternal href={"/"} target="_blank">
+                    {el.artistName}
+                  </LinkExternal>{" "}
+                  &nbsp;
+                  <Dot>&#8226;</Dot>&nbsp;
                 </ItemDescription>
                 <ItemDescription>
                   {` `}
-                  {el.collectionCensoredName}
+                  <LinkExternal href={el.collectionViewUrl} target="_blank">
+                    {el.collectionCensoredName}
+                  </LinkExternal>
                 </ItemDescription>
               </SubDescription>
             </Description>
+            <Info>
+              <InfoModal content={{el}}/>
+            </Info>
           </Item>
         );
       })}

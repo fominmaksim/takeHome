@@ -18,8 +18,7 @@ const Label = styled.label`
 const Input = styled.input`
   background-color: #212121;
   border: none;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
+  border-radius: 5px;
   height: 3rem;
   color: #818181;
   font-size: 20px;
@@ -87,7 +86,7 @@ const SearchPanel: React.FunctionComponent = () => {
             onChange={handleInputChange}
             value={input}
           />
-          <SearchSubmitButton type="submit" value="→" />
+        
         </Label>
       </form>
       <SearchResultWrapper>
