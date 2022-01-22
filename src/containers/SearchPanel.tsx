@@ -25,16 +25,6 @@ const Input = styled.input`
   width: 100%;
   padding-left: 1rem;
 `;
-const SearchSubmitButton = styled.input`
-  color: #818181;
-  background-color: #212121;
-  border: none;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-  margin-left: 0.1rem;
-  padding: 0 1rem;
-  cursor: pointer;
-`;
 
 const SearchResultWrapper = styled.div``;
 const Spinner = styled.p`
