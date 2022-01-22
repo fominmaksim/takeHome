@@ -1,7 +1,7 @@
 .customModal {
   background: #212121;
   max-width: 35rem;
-  width: 100%;
+  width: calc(100% - 2rem * 2);
   padding: 2rem;
 }
 @media (max-width: 1200px) {

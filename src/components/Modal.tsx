@@ -19,10 +19,9 @@ const ModalCover = styled.img`
   align-self: center;
   @media (max-width: 1200px) {
     margin: 0 2rem 0 0;
-}
+  }
 `;
-const ModalInfo = styled.div`
-`;
+const ModalInfo = styled.div``;
 const ItemTitle = styled.p`
   display: flex;
   color: #b4b4b4;
