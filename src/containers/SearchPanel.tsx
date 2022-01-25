@@ -65,7 +65,6 @@ const SearchPanel: React.FunctionComponent = () => {
     }
   });
 
-  console.log(iTunesData);
   return (
     <Wrapper>
       <form onSubmit={(e) => handleSubmit(e)}>
