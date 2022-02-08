@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/takeHome/static/css/main.dfcc3215.css",
+    "main.js": "/takeHome/static/js/main.79a6a105.js",
+    "index.html": "/takeHome/index.html",
+    "static/media/info.svg": "/takeHome/static/media/info.f7cafc1ce470d7432ae7c2e7d8b602b1.svg",
+    "main.dfcc3215.css.map": "/takeHome/static/css/main.dfcc3215.css.map",
+    "main.79a6a105.js.map": "/takeHome/static/js/main.79a6a105.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dfcc3215.css",
+    "static/js/main.79a6a105.js"
+  ]
+}
